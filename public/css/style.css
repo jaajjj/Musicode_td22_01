@@ -1,0 +1,222 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #7DD3FC 0%, #818CF8 100%);
+    padding: 20px 200px 20px 200px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+h1{
+    font-weight: 500;
+}
+
+.logo {
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.logo img {
+    display: block; 
+    height: 40px;
+    width:auto; 
+}
+
+.logo-icon {
+    margin-right: 8px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+}
+
+
+
+.catalogue-header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.catalogue-header p {
+    margin-bottom: 40px;
+}
+
+.music-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.music-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.music-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.music-card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.music-card .duration {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.card-actions .details-link {
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(0, 132, 255);
+
+}
+
+.card-actions .add-link {
+    text-decoration: none;
+}
+
+
+.card-actions .duration {
+    color: gray;
+}
+
+footer {
+    margin-top: 80px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+    height: 100px;
+
+}
+
+/* === PAGE INSCRIPTION === */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.form-box {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 400px;
+    text-align: left;
+}
+
+.form-box h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #111827;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #818CF8;
+    box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.2);
+}
+
+/* --- Bouton du formulaire --- */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #818CF8 0%, #A78BFA 100%);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* --- Lien de redirection connexion --- */
+.login-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.login-link a {
+    color: #6366F1;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* --- Harmonisation du footer pour cette page --- */
+footer {
+    color: #555;
+}
+

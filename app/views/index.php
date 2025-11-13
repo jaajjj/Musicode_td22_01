@@ -8,7 +8,8 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo">
+        <a href=
+        "#" class="logo">
             <span class="logo-icon"> <img src="logo.svg.png" alt=""></span> Musicode
         </a>
         <nav>
@@ -16,7 +17,7 @@
             <a href="#">Connexion</a>
             <a href="#">Inscription</a>
         </nav>
-    </header>   
+    </header>
     <div class="container">
         <main>
             <section class="catalogue-header">
@@ -54,5 +55,9 @@
             </div>
         </main>
     </div>
+    <footer>
+        © 2025 Musicode · IUT Laval – R3.01 Développement web 2025-2026.
+    </footer>
 </body>
+
 </html>
