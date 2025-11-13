@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musicode - Inscription</title>
-    <link rel="stylesheet" href="public\css\style.css">
-</head>
-<body>
-    <header>
-        <a href="#" class="logo">
-            <span class="logo-icon">
-                <img src="logo.svg.png" alt="Logo Musicode">
-            </span>
-            Musicode
-        </a>
-        <nav>
-            <a href="#">Catalogue</a>
-            <a href="#">Connexion</a>
-            <a href="#" class="active">Inscription</a>
-        </nav>
-    </header>
+<?php include_once "templates/header.php" ?>
 
     <main class="form-container">
         <div class="form-box">
@@ -44,8 +23,4 @@
         </div>
     </main>
 
-    <footer>
-        © 2025 Musicode · IUT Laval – R3.01 Développement web 2025-2026.
-    </footer>
-</body>
-</html>
+<?php include_once "templates/footer.php" ?>
