@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musicode - Catalogue des musiques</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <a href="#" class="logo">
+        <a href=
+        "#" class="logo">
             <span class="logo-icon"> <img src="logo.svg.png" alt=""></span> Musicode
         </a>
         <nav>
@@ -16,8 +17,8 @@
             <a href="#">Connexion</a>
             <a href="#">Inscription</a>
         </nav>
-    </header>
-        <div class="container">
+    </header>   
+    <div class="container">
         <main>
             <section class="catalogue-header">
                 <h1>Catalogue des musiques</h1>
@@ -54,5 +55,9 @@
             </div>
         </main>
     </div>
+    <footer>
+        © 2025 Musicode · IUT Laval – R3.01 Développement web 2025-2026.
+    </footer>
 </body>
+
 </html>
