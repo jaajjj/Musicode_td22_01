@@ -220,3 +220,37 @@ footer {
     color: #555;
 }
 
+
+/* Login */
+/* === PAGE CONNEXION === */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.form-box {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.08);
+    width: 400px;
+    text-align: left;
+}
+
+.form-box h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #111827;
+}
+.error-message {
+    background-color: #FEE2E2;
+    color: #B91C1C;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #FCA5A5;
+}

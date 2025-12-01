@@ -1,6 +1,8 @@
 <?php
 require_once 'vendor/autoload.php';
 
+session_start();
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
@@ -12,6 +14,9 @@ switch($page) {
         break;
     case 'login':
         require 'views/login.php';
+        break;
+     case 'traitementConnexion':
+        require 'controllers/ConnexionController.php';
         break;
     case 'catalogue':
         require 'views/catalogue.php';
