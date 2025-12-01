@@ -8,12 +8,12 @@
 </head>
 <body>
     <header>
-        <a href="<?= $_ENV['BASE_URL'].'index.php?page=home'?>" class="logo">
+        <a href="<?= $_ENV['BASE_URL'].'home'?>" class="logo">
             <span class="logo-icon"><img alt='logo-beau' src="<?= $_ENV['BASE_URL'].'assets/img/logo.png' ?>"></span> Musicode
         </a>
         <nav>
-            <a href="<?= $_ENV['BASE_URL'].'index.php?page=catalogue' ?>">Catalogue</a>
-            <a href="<?= $_ENV['BASE_URL'].'index.php?page=login' ?>">Connexion</a>
-            <a href="<?= $_ENV['BASE_URL'].'index.php?page=inscription' ?>">Inscription</a>
+            <a href="<?= $_ENV['BASE_URL'].'catalogue' ?>">Catalogue</a>
+            <a href="<?= $_ENV['BASE_URL'].'login' ?>">Connexion</a>
+            <a href="<?= $_ENV['BASE_URL'].'inscription' ?>">Inscription</a>
         </nav>
     </header>
