@@ -229,3 +229,87 @@ footer {
     color: #555;
 }
 
+/* === DETAIL MUSIQUE === */
+/* Conteneur principal centré */
+.detail-container {
+    max-width: 900px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #111827;
+}
+
+/* Lien retour discret en haut */
+.back-link {
+    font-size: 14px;
+    color: #6b7280; /* gris moyen */
+    text-decoration: none;
+    margin-bottom: 30px;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #3b82f6; /* bleu clair */
+}
+
+/* Carte blanche avec arrondi et ombre */
+.detail-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 40px 50px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* Titres */
+.detail-card h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+/* Artiste */
+.detail-card .artist {
+    font-size: 16px;
+    color: #374151; /* gris foncé */
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Album et durée */
+.detail-card .album,
+.detail-card .duration {
+    font-size: 14px;
+    color: #6b7280; /* gris moyen */
+    margin-bottom: 10px;
+}
+
+.detail-card .duration {
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* Bouton bleu dégradé large */
+.detail-card .btn {
+    width: 260px;
+    padding: 12px 0;
+    font-weight: 400;
+    font-size: 18px;
+    background: linear-gradient(90deg, #3b82f6 0%, #b39eff 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}

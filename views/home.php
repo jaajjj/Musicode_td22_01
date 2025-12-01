@@ -1,12 +1,10 @@
 <?php 
-include_once "templates/header.php";
-include_once "models/modelCatalogue.php";
-include_once "models/modelMusique.php";
+require_once "controllers/catalogueMusiqueController.php";
 
-$catalogue = get_all_musiques();
 ?>
 
-    <div class="container">
+
+<div class="container">
         <main>
             <section class="catalogue-header">
                 <h1>Catalogue des musiques</h1>
@@ -20,11 +18,9 @@ $catalogue = get_all_musiques();
                         <p><?= $musique["auteur_mus"]?> - Album : <?= $musique["album_mus"]?></p>
                         <span class="duration">Durée : <?= get_duree($musique["duree_mus"])?></span>
                         <div class="card-actions">
-                            <a href="#" class="details-link">Voir la fiche</a>
-                        </div>
+                        <a href="<?= getenv('BASE_URL').'detailMusique?id='.$musique['id_mus'] ?>" class="details-link">Voir la fiche</a>                        </div>
                     </article>
                 <?php endforeach; ?>
             </div>
         </main>
     </div>
-<?php include_once "templates/footer.php" ?>

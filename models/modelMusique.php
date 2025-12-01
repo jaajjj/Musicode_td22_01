@@ -13,3 +13,10 @@ function get_duree($secondes) {
     $sec = $secondes % 60;
     return sprintf('%02d"%02d"', $minutes, $sec);
 }
+
+function get_musique_by_id($id) {
+    $pdo = get_bdd();
+    $stmt = $pdo->prepare("SELECT * FROM MUSIQUE WHERE id_mus = $id");
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
