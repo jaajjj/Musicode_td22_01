@@ -16,6 +16,10 @@ switch($page) {
     case 'catalogue':
         require 'views/catalogue.php';
         break;
-    default:
+    case 'home':
         require 'views/home.php';
+        break;
+    default:
+        http_response_code(404);
+        break;
 }
