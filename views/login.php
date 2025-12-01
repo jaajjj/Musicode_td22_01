@@ -19,7 +19,6 @@
 
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" required>
-
                 <button type="submit" class="btn">Se connecter</button>
             </form>
 

@@ -254,3 +254,32 @@ footer {
     margin-bottom: 20px;
     border: 1px solid #FCA5A5;
 }
+.deconexion_btn {
+    background-color: #ededff;
+    color: rgb(0, 0, 0);
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Page déconnexion */
+
+.logout-message {
+    text-align: center;
+    font-size: 15px;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+
+.logout-message strong {
+    color: #111827;
+}
+
+/* optionnel : petit texte de redirection plus gris */
+.logout-redirect {
+    text-align: center;
+    font-size: 13px;
+    color: #6b7280;
+}

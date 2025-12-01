@@ -13,7 +13,14 @@
         </a>
         <nav>
             <a href="<?= $_ENV['BASE_URL'].'catalogue' ?>">Catalogue</a>
-            <a href="<?= $_ENV['BASE_URL'].'login' ?>">Connexion</a>
-            <a href="<?= $_ENV['BASE_URL'].'inscription' ?>">Inscription</a>
+            <?php if (empty($_SESSION['isConnected'])): ?>
+                <a href="<?= $_ENV['BASE_URL'].'login' ?>">Connexion</a>
+                <a href="<?= $_ENV['BASE_URL'].'inscription' ?>">Inscription</a>
+            <?php else: ?>
+                <a href="<?= $_ENV['BASE_URL'].'bibliotheque' ?>">Ma bibliotheque</a>
+                <a href="<?= $_ENV['BASE_URL'].'compte' ?>">Mon profil</a>
+                <a class="deconexion_btn" href="<?= $_ENV['BASE_URL'].'TraitementDeconnexion' ?>">Déconnexion</a>
+            <?php endif; ?>
+
         </nav>
     </header>

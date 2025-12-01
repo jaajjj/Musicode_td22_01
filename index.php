@@ -24,6 +24,15 @@ switch($page) {
     case 'home':
         require 'views/home.php';
         break;
+    case 'compte':
+        require 'views/compte.php';
+        break;
+    case 'bibliotheque':
+        require 'views/bibliotheque.php';
+        break;
+    case 'TraitementDeconnexion':
+        require 'controllers/DeconnexionController.php';
+        break;
     default:
         http_response_code(404);
         break;
