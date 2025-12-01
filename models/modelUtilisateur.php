@@ -23,7 +23,6 @@ function inscription($username, $password, $email){
     return $stmt->execute([$username, $email, $password]);
 }
 
-
 function verify_user(string $email, string $password) {
     $user = get_user_by_email($email);
     if (!$user) {
