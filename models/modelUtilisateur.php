@@ -15,22 +15,26 @@ function get_user_by_email(string $email) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-// pour l’instant tes mots de passe en BDD sont en clair (mdpAlice123…)
-// donc on NE hash PAS ici, on garde simple.
-// Quand tu migreras, tu remettras password_hash/password_verify.
 function create_user(string $email, string $password): bool {
     $pdo = get_bdd();
+
+    // hash sécurisé (bcrypt via PASSWORD_DEFAULT)
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+
     $sql = "INSERT INTO USER (mail_user, mdp_user) VALUES (?, ?)";
     $stmt = $pdo->prepare($sql);
-    return $stmt->execute([$email, $password]);
+    return $stmt->execute([$email, $hash]);
 }
+
 
 function verify_user(string $email, string $password) {
     $user = get_user_by_email($email);
     if (!$user) {
         return false;
     }
-    if ($password === $user['mdp_user']) {
+    $hash = $user['mdp_user'];
+
+    if (password_verify($password, $hash) || $password === $hash) {
         return $user;
     }
     return false;

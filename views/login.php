@@ -13,7 +13,7 @@
             <?php endif; ?>
 
 
-            <form action="<?= $_ENV['BASE_URL'].'traitementConnexion' ?>" method="post">
+            <form action="<?= getenv('BASE_URL').'traitementConnexion' ?>" method="post">
                 <label for="email">Adresse e-mail</label>
                 <input type="email" id="email" name="email" required>
 
@@ -24,7 +24,7 @@
 
             <p class="login-link">
                 Pas encore de compte ?
-                <a href="<?= $_ENV['BASE_URL'].'inscription' ?>">Créer un compte.</a>
+                <a href="<?= getenv('BASE_URL').'inscription' ?>">Créer un compte.</a>
             </p>
         </div>
     </main>

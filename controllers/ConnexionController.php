@@ -16,15 +16,15 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
             'mail_user' => $user['mail_user']
         ];
 
-        header('Location: ' . $_ENV['BASE_URL'] . 'home');
+        header('Location: ' . getenv('BASE_URL') . 'home');
         exit();
     } else {
         $_SESSION['connexion_error'] = "Email ou mot de passe incorrect.";
-        header('Location: ' . $_ENV['BASE_URL'] . 'login');
+        header('Location: ' . getenv('BASE_URL') . 'login');
         exit();
     }
 } else {
     $_SESSION['connexion_error'] = "Veuillez remplir tous les champs.";
-    header('Location: ' . $_ENV['BASE_URL'] . 'login');
+    header('Location: ' . getenv('BASE_URL') . 'login');
     exit();
 }
