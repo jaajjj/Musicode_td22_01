@@ -8,7 +8,11 @@ $page = $_GET['page'] ?? 'home';
 
 switch($page) {
     case 'inscription':
-        require 'views/inscription.php';
+        
+            require_once __DIR__ . '/views/templates/header.php';
+            require_once __DIR__ . '/views/inscription.php';
+            require_once __DIR__ . '/views/templates/footer.php';
+        
         break;
     case 'login':
         require 'views/login.php';
@@ -18,6 +22,9 @@ switch($page) {
         break;
     case 'home':
         require 'views/home.php';
+        break;
+    case 'inscription_traitement':
+        require 'controllers/traitement_Inscription.php';
         break;
     default:
         http_response_code(404);

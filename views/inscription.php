@@ -1,9 +1,9 @@
-<?php include_once "templates/header.php" ?>
+<?php require_once __DIR__ . '/../controllers/traitement_Inscription.php'; ?>
 
     <main class="form-container">
         <div class="form-box">
             <h2>Inscription</h2>
-            <form>
+            <form method ="POST" action="<?php echo getenv('BASE_URL'); ?>inscription">
                 <label for="nom">Nom d’affichage</label>
                 <input type="text" id="nom" name="nom">
 
@@ -18,9 +18,15 @@
 
                 <button type="submit" class="btn">Créer mon compte</button>
 
-                <p class="login-link">Déjà inscrit ? <a href="#">Se connecter.</a></p>
+                <p class="login-link">Déjà inscrit ? <a href="<?php echo getenv('BASE_URL'); ?>login">Se connecter.</a></p>
             </form>
+            <?php if (!empty($errors)): ?>
+            <ul>
+                <?php foreach ($errors as $err): ?>
+                    <li><?= htmlspecialchars($err) ?></li>
+                <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
         </div>
     </main>
 
-<?php include_once "templates/footer.php" ?>
