@@ -14,15 +14,6 @@ function get_user_by_email(string $email) {
     $stmt->execute([$email]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
-
-function create_user(string $email, string $password): bool {
-    $pdo = get_bdd();
-    $stmt = $pdo->prepare("SELECT * FROM USER");
-    $stmt->execute();
-    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $users;
-}
-
 function inscription($username, $password, $email){
     $pdo = get_bdd();
     $stmt = $pdo->prepare("
@@ -30,15 +21,6 @@ function inscription($username, $password, $email){
         VALUES (?, ?, ?)
     ");
     return $stmt->execute([$username, $email, $password]);
-}
-
-
-    // hash sécurisé (bcrypt via PASSWORD_DEFAULT)
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-
-    $sql = "INSERT INTO USER (mail_user, mdp_user) VALUES (?, ?)";
-    $stmt = $pdo->prepare($sql);
-    return $stmt->execute([$email, $hash]);
 }
 
 
