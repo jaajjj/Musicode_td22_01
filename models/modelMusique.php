@@ -7,5 +7,3 @@ function get_user(){
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $users;
 }
-
-var_dump(get_user());
