@@ -13,5 +13,4 @@ function get_bdd(){
     return $pdo;
 }
 
-var_dump(get_bdd());
 
