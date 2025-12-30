@@ -57,8 +57,12 @@ nav a {
     color: black;
 }
 
-
-
+.catalogue-header {
+    display: flex;
+    align-items: center;      /* aligne verticalement titre / texte / bouton */
+    gap: 16px;                /* espace entre les éléments */
+    padding-right: 37px;
+}
 .catalogue-header h1 {
     font-size: 32px;
     font-weight: 600;
@@ -68,7 +72,9 @@ nav a {
 .catalogue-header p {
     margin-bottom: 40px;
 }
-
+.catalogue-header .new-music-btn {
+    margin-left: auto;        /* pousse le bouton complètement à droite */
+}
 .music-grid {
     display: flex;
     gap: 20px;
@@ -642,3 +648,90 @@ footer {
     gap: 8px;
 }
 
+
+.detail-container {
+    max-width: 900px;
+    margin: 40px 0 80px 200px;  /* top right bottom left */
+    padding: 0 20px;
+}
+
+.new-music-btn {
+    background-color: #1488c6; /* Bleu standard */
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding : 0px 20px;        /* Espace autour du texte */
+    border-radius: 8px;        /* Coins arrondis */
+    font-size: 16px;           /* Taille du texte */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;                  /* Espace pour une éventuelle icône */
+}
+
+/* Effet au survol */
+.new-music-btn:hover {
+    background-color: #0056b3; /* Bleu plus foncé */
+}
+
+
+.new-music-form {
+    width:900px;
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #111827;
+
+}.new-music-form h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+/* Groupe durée */
+.duration-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.duration-field {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+}
+
+.duration-field input {
+    width: 100%;
+}
+
+.duration-label {
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.duration-separator {
+    font-size: 20px;
+    color: #6b7280;
+}
+
+/* Bouton enregistrer */
+.save-music-btn {
+    margin-top: 10px;
+}
+
+.save-music-btn {
+    background-color: #1488c6; /* Bleu standard */
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding : 10px;        /* Espace autour du texte */
+    border-radius: 8px;        /* Coins arrondis */
+    font-size: 16px;           /* Taille du texte */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+}

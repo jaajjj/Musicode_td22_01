@@ -21,6 +21,16 @@ function get_musique_by_id($id) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+function ajouter_musique($titre, $artiste, $album, $duree) {
+    $pdo = get_bdd();
+    $stmt = $pdo->prepare("INSERT INTO MUSIQUE (titre_mus, auteur_mus, album_mus, duree_mus) VALUES (:titre, :auteur, :album, :duree)");
+    $stmt->bindParam(':titre', $titre);
+    $stmt->bindParam(':auteur', $artiste);
+    $stmt->bindParam(':album', $album);
+    $stmt->bindParam(':duree', $duree);
+    return $stmt->execute();
+}
+
 function ajouter_musique_to_bibliotheque($id_user, $id_mus){
     $pdo = get_bdd();
     $stmt = $pdo->prepare("INSERT INTO BIBLIOTHEQUE (id_user, id_mus) VALUES (?, ?)");

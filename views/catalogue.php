@@ -1,15 +1,29 @@
 
 <div class="container">
         <main>
+
+
             <section class="catalogue-header">
-                <h1>Catalogue des musiques</h1>
-                <p>Découvrez les morceaux disponibles et ajoutez-les à votre bibliothèque.</p>
+                <div>
+                    <h1>Catalogue des musiques</h1>
+                    <p>Découvrez les morceaux disponibles et ajoutez-les à votre bibliothèque.</p>
+                </div>
+                <?php if (!empty($_SESSION['isConnected'])): ?>
+                    <a href="<?= getenv('BASE_URL') . 'nouvelleMusique' ?>" 
+                        class="new-music-btn" 
+                        title="Nouvelle musique">
+                        <span style="font-size: 2em;">+</span> Nouvelle musique
+                    </a>
+                <?php endif; ?>
+                
+                
+               
             </section>
 
             <div class="music-grid">
                 <?php foreach ($catalogue as $musique): ?>
                     <article class="music-card">
-                        <h3><?= $musique["titre_mus"]?></h3>
+                                         <h3><?= $musique["titre_mus"]?></h3>
                         <p><?= $musique["auteur_mus"]?> - Album : <?= $musique["album_mus"]?></p>
                         <span class="duration">Durée : <?= get_duree($musique["duree_mus"])?></span>
                         <div class="card-actions">

@@ -40,6 +40,9 @@ switch($page) {
     case 'bibliotheque':
         require_once __DIR__.'/controllers/bibliothequeController.php';
         break;
+    case 'nouvelleMusique':
+        require 'controllers/nouvelleMusiqueController.php';
+        break;
     case 'TraitementDeconnexion':
         require 'controllers/DeconnexionController.php';
         break;
