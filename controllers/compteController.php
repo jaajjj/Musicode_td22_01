@@ -4,7 +4,6 @@ require_once __DIR__ . '/../models/modelCompte.php';
 $idUser = (int) $_SESSION['user']['id_user'];
 $user   = get_compte_user($idUser);
 
-// valeurs par défaut POUR LA VUE
 $displayName    = $user['nom_user'];
 $successMessage = '';
 $errorMessage   = '';
