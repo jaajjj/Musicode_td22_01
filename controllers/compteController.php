@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../models/modelCompte.php';
+require_once __DIR__ . '/../models/modelUtilisateur.php';
 
 $idUser = (int) $_SESSION['user']['id_user'];
 $user   = get_compte_user($idUser);
