@@ -11,14 +11,10 @@ require_once 'views/templates/header.php';
 
 switch($page) {
     case 'inscription':
-        
-            require_once __DIR__ . '/views/templates/header.php';
-            require_once __DIR__ . '/views/inscription.php';
-            require_once __DIR__ . '/views/templates/footer.php';
-        
+         require_once __DIR__.'/controllers/traitement_Inscription.php';// good mvc
         break;
     case 'login':
-        require 'views/login.php';
+        require_once __DIR__.'/controllers/ConnexionController.php';
         break;
      case 'traitementConnexion':
         require 'controllers/ConnexionController.php';

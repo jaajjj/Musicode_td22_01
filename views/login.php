@@ -1,4 +1,3 @@
-<?php include_once "templates/header.php" ?>
 
 <div class="form-container">
     <main>

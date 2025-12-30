@@ -1,5 +1,6 @@
 <?php 
 require_once __DIR__ . '/../models/modelUtilisateur.php';
+
 function motdepasse_invalide($mdp, $mdp2) {
     $err = [];
     if (strlen($mdp) < 8) $err[] = "Le mot de passe doit contenir au moins 8 caractères";
@@ -9,6 +10,7 @@ function motdepasse_invalide($mdp, $mdp2) {
     if ($mdp !== $mdp2) $err[] = "Les mots de passe sont différents";
     return $err;
 }
+require_once __DIR__.'/../views/inscription.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

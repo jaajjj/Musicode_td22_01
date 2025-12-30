@@ -17,7 +17,7 @@ function get_user_by_email(string $email) {
 function inscription($username, $password, $email){
     $pdo = get_bdd();
     $stmt = $pdo->prepare("
-        INSERT INTO user (nom_user,mail_user,mdp_user )
+        INSERT INTO USER (nom_user,mail_user,mdp_user )
         VALUES (?, ?, ?)
     ");
     return $stmt->execute([$username, $email, $password]);

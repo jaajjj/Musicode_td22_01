@@ -1,4 +1,3 @@
-<?php require_once __DIR__ . '/../controllers/traitement_Inscription.php'; ?>
 
     <main class="form-container">
         <div class="form-box">
