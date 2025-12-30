@@ -11,7 +11,7 @@ require_once 'views/templates/header.php';
 
 switch($page) {
     case 'inscription':
-         require_once __DIR__.'/controllers/traitement_Inscription.php';// good mvc
+         require_once __DIR__.'/controllers/traitement_Inscription.php';
         break;
     case 'login':
         require_once __DIR__.'/controllers/ConnexionController.php';
