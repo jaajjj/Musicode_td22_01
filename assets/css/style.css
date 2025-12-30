@@ -119,6 +119,27 @@ nav a {
     color: rgb(0, 132, 255);
 
 }
+.connection-link{
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(184, 187, 189);
+}
+
+.bouton-ajouter-biblio {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 10px;            
+    border: 2px solid #c7e6ff;      
+    background-color: #e9f5ff;       
+    color: #1674b8;                  
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+
 
 .card-actions .add-link {
     text-decoration: none;
@@ -208,6 +229,8 @@ input:focus {
     font-size: 15px;
     cursor: pointer;
     transition: opacity 0.3s;
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn:hover {
@@ -468,3 +491,154 @@ footer {
     font-size: 13px;
     margin-bottom: 16px;
 }
+
+/* === PAGE bibliotheque === */
+.notif-ajout-biblio{
+    background-color: #e9f8ff;      
+    border: 1px solid #c4e8ff;      
+    color: #2b6ea8;                 
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    max-width: 900px;               
+    margin: 16px auto 0;            
+}
+.notif-ajout-biblio.error {
+    background-color: #FEE2E2;
+    border: 1px solid #FCA5A5;
+    color: #B91C1C;
+}
+/* ---- Mise en page générale ---- */
+
+.biblio-page {
+    margin: 0;
+    padding: 40px 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #f7f9fc;
+    color: #1f2933;
+}
+
+.biblio-container {
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.biblio-title {
+    font-size: 24px;
+    margin: 0 0 4px;
+}
+
+.biblio-subtitle {
+    font-size: 13px;
+    color: #7b8794;
+    margin-bottom: 24px;
+}
+
+/* ---- Card de bibliothèque ---- */
+.biblio-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 colonnes max */
+    gap: 20px;
+}
+
+.biblio-card {
+    flex: 1 1 calc(50% - 20px);
+    max-width: 520px;
+}
+
+.biblio-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+    border: 1px solid #edf2f7;
+    max-width: 520px;
+}
+
+.biblio-card-header {
+    margin-bottom: 12px;
+}
+
+.biblio-card-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.biblio-card-meta {
+    font-size: 12px;
+    color: #9aa5b1;
+    margin-bottom: 4px;
+}
+
+.biblio-card-duration {
+    font-size: 11px;
+    color: #9aa5b1;
+}
+
+
+
+.biblio-card-note-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+    font-size: 13px;
+}
+
+.biblio-card-note-label {
+    color: #4b5563;
+}
+
+.biblio-card-note-input {
+    width: 60px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    font-size: 13px;
+    outline: none;
+}
+
+.biblio-card-note-input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+}
+
+
+
+.biblio-card-btn {
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 7px 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.biblio-card-btn-update {
+    background: #f3e8ff;
+    color: #7c3aed;
+}
+
+.biblio-card-btn-update:hover {
+    background: #e9d5ff;
+}
+
+.biblio-card-btn-remove {
+    background: #ffe5f1;
+    color: #e11d48;
+    text-decoration: none;
+}
+
+.biblio-card-btn-remove:hover {
+    background: #fed7e6;
+}
+
+.biblio-card-actions-row {
+    display: flex;
+    gap: 8px;
+}
+
