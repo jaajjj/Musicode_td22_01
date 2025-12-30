@@ -10,7 +10,7 @@ function motdepasse_invalide($mdp, $mdp2) {
     if ($mdp !== $mdp2) $err[] = "Les mots de passe sont différents";
     return $err;
 }
-require_once __DIR__.'/../views/inscription.php';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -32,6 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
+require_once __DIR__.'/../views/inscription.php';
 
 ?>

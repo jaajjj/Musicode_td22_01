@@ -20,9 +20,9 @@
                 <p class="login-link">Déjà inscrit ? <a href="<?php echo getenv('BASE_URL'); ?>login">Se connecter.</a></p>
             </form>
             <?php if (!empty($errors)): ?>
-            <ul>
+            <ul class="error-messages">
                 <?php foreach ($errors as $err): ?>
-                    <li><?= htmlspecialchars($err) ?></li>
+                    <li class="error"><?= $err ?></li>
                 <?php endforeach; ?>
             </ul>
             <?php endif; ?>

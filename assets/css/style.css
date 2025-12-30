@@ -140,6 +140,15 @@ footer {
 
 /* === PAGE INSCRIPTION === */
 
+.error {
+    color: #B91C1C;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.error-messages
+{
+    margin-bottom: -20px;
+}
 .form-container {
     display: flex;
     justify-content: center;
