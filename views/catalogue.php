@@ -1,8 +1,3 @@
-<?php 
-require_once "controllers/catalogueMusiqueController.php";
-
-?>
-
 
 <div class="container">
         <main>

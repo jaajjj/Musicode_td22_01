@@ -17,16 +17,13 @@ switch($page) {
         require_once __DIR__.'/controllers/ConnexionController.php';
         break;
      case 'traitementConnexion':
-        require 'controllers/ConnexionController.php';
-        break;
-    case 'catalogue':
-        require 'views/catalogue.php';
+        require_once __DIR__.'/controllers/ConnexionController.php';
         break;
     case 'home':
-        require 'views/home.php';
+        require_once __DIR__. '/controllers/catalogueMusiqueController.php';
         break;
     case 'detailMusique':
-        require 'views/detailMusique.php';
+        require_once __DIR__. '/controllers/detailMusiqueController.php';
         break;
     case 'compte':
         require 'views/compte.php';
