@@ -53,3 +53,13 @@ function supprimer_musique_biblio($id_user, $id_mus){
     $stmt = $pdo->prepare("DELETE FROM BIBLIOTHEQUE WHERE id_user = ? AND id_mus = ?");
     return $stmt->execute([$id_user, $id_mus]);
 }
+
+function musique_existe_in_biblio($id_user, $id_mus){
+    $pdo = get_bdd();
+    $stmt = $pdo->prepare("SELECT * FROM BIBLIOTHEQUE WHERE id_user = ? AND id_mus = ?");
+    $musique = $stmt->execute([$id_user, $id_mus]);
+    if($stmt->fetch()){
+        return true;
+    }
+    return false;
+}

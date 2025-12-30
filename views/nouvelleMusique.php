@@ -1,37 +1,11 @@
     <div class="detail-container">
-        <a href="<?= getenv('BASE_URL') . 'catalogue' ?>" class="back-link">
+        <a href="<?= getenv('BASE_URL') . 'home' ?>" class="back-link">
             ← Retour au catalogue
         </a>
 
-            <?php 
-
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                // Récupération des données du formulaire
-                $titre = $_POST['titre'] ?? '';
-                $artiste = $_POST['artiste'] ?? '';
-                $album = $_POST['album'] ?? '';
-                $duree_min = isset($_POST['duree_min']) ? (int)$_POST['duree_min'] : 0;
-                $duree_sec = isset($_POST['duree_sec']) ? (int)$_POST['duree_sec'] : 0;
-
-                // Calcul de la durée totale en secondes
-                $duree_totale = ($duree_min * 60) + $duree_sec;
-
-                if (empty($errors)) {
-                    // Inclusion du modèle pour l'insertion en base de données
-                    require_once __DIR__ . '/../models/modelMusique.php';
-
-                    // Insertion de la nouvelle musique
-                    $insertion_success = ajouter_musique($titre, $artiste, $album, $duree_totale);
-
-                    if ($insertion_success) {
-                        $successMessage = "Musique ajoutée avec succès.";
-                    }
-                }
-            }
-            $successMessage = isset($successMessage) ? $successMessage : '';
-            if (!empty($successMessage)): ?>
-                <p class="account-success"><?= htmlspecialchars($successMessage) ?></p>
-            <?php endif; ?>
+        <?php if (!empty($successMessage)): ?>
+            <p class="account-success"><?= htmlspecialchars($successMessage) ?></p>
+        <?php endif; ?>
 
         <section class="new-music-form">
             <h1>Ajouter une musique</h1>
@@ -50,7 +24,7 @@
 
                 <!-- Album -->
                 <label for="album">Album</label>
-                <input type="text" id="album" name="album" placeholder="Optionnel">
+                <input type="text" id="album" name="album" required>
 
                 <!-- Durée -->
                 <label for="duree_min">Durée *</label>

@@ -30,8 +30,10 @@
                             <a href="<?= getenv('BASE_URL').'detailMusique?id='.$musique['id_mus'] ?>" class="details-link">Voir la fiche</a>
                             <?php if(!isset($_SESSION['isConnected']) || !$_SESSION['isConnected']):?>
                                 <a href="<?= getenv('BASE_URL').'login'?>" class="connection-link">Connectez vous pour l'ajouter</a>
-                            <?php else:?>
+                            <?php elseif(!musique_existe_in_biblio($_SESSION['user']['id_user'], $musique['id_mus'])):?> 
                                 <a href="<?= getenv('BASE_URL').'ajoutMusiqueBiblio?id_mus='.$musique['id_mus'].'&id_user='.$_SESSION['user']['id_user'];?>" class="bouton-ajouter-biblio">Ajouter</a>
+                            <?php else:?>
+                                <a class="already-in-biblio">Déjà dans la bibliothèque</a>
                             <?php endif;?>
                         </div>
                     </article>
