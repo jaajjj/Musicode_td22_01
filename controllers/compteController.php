@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user']['nomUser'] = $displayName;
             $successMessage = "Votre compte a bien été mis à jour.";
         } else {
-            $errorMessage = "Une erreur est survenue lors de la mise à jour.";
+            $errorMessage = "Une erreur est survenue lors de la mise à jour, ressayez :(";
         }
     }
 }
