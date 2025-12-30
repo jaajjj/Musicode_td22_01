@@ -26,7 +26,7 @@ switch($page) {
         require_once __DIR__. '/controllers/detailMusiqueController.php';
         break;
     case 'compte':
-        require 'views/compte.php';
+        require_once __DIR__. '/controllers/compteController.php';
         break;
     case 'bibliotheque':
         require 'views/bibliotheque.php';

@@ -1,25 +1,16 @@
 <?php
-require_once __DIR__ . '/../models/CompteModel.php';
-
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-if (empty($_SESSION['isConnected']) || empty($_SESSION['user'])) {
-    header('Location: ' . getenv('BASE_URL') . 'login');
-    exit();
-}
+require_once __DIR__ . '/../models/modelCompte.php';
 
 $idUser = (int) $_SESSION['user']['id_user'];
 $user   = get_compte_user($idUser);
 
 // valeurs par défaut POUR LA VUE
-$displayName    = $user['nom_user'] ?? '';
+$displayName    = $user['nom_user'];
 $successMessage = '';
 $errorMessage   = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $displayName = trim($_POST['display_name'] ?? '');
+    $displayName = $_POST['display_name'] ?? '';
     $newPassword = $_POST['new_password'] ?? '';
     $confirm     = $_POST['confirm_password'] ?? '';
 

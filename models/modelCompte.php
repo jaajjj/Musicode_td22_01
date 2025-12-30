@@ -1,24 +1,27 @@
 <?php
 require_once 'modelBDD.php';
 
-function get_all_musiques() {
+function get_compte_user(int $idUser) {
     $pdo = get_bdd();
-    // Correspond à CREATE TABLE MUSIQUE ...
-    $stmt = $pdo->query("SELECT id_mus, auteur_mus, titre_mus, album_mus, duree_mus FROM MUSIQUE");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-function get_musique_by_id(int $id) {
-    $pdo = get_bdd();
-    $stmt = $pdo->prepare("SELECT id_mus, auteur_mus, titre_mus, album_mus, duree_mus 
-                           FROM MUSIQUE 
-                           WHERE id_mus = ?");
-    $stmt->execute([$id]);
+    $sql = "SELECT id_user, nom_user, mail_user, mdp_user
+            FROM USER
+            WHERE id_user = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$idUser]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-function get_duree(int $secondes): string {
-    $minutes = intdiv($secondes, 60);
-    $sec = $secondes % 60;
-    return sprintf('%02d"%02d"', $minutes, $sec);
+function update_compte_nom(int $idUser, string $nom): bool {
+    $pdo = get_bdd();
+    $sql = "UPDATE USER SET nom_user = ? WHERE id_user = ?";
+    $stmt = $pdo->prepare($sql);
+    return $stmt->execute([$nom, $idUser]);
 }
+
+function update_compte_nom_mdp(int $idUser, string $nom, string $hashedPassword): bool {
+    $pdo = get_bdd();
+    $sql = "UPDATE USER SET nom_user = ?, mdp_user = ? WHERE id_user = ?";
+    $stmt = $pdo->prepare($sql);
+    return $stmt->execute([$nom, $hashedPassword, $idUser]);
+}
+?>
