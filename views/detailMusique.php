@@ -12,7 +12,7 @@ require_once "controllers/detailMusiqueController.php";
         <p class="album">Album : <?= htmlspecialchars($musique['album_mus']) ?></p>
         <p class="duration">Durée : <?= get_duree($musique['duree_mus']) ?></p>
 
-        <button class="btn">Ajouter à ma bibliothèque</button>
+        <a href="<?= getenv('BASE_URL').'ajoutMusiqueBiblio?id_mus='.$musique['id_mus'].'&id_user='.$_SESSION['user']['id_user'];?>" class="btn">Ajouter à ma bibliothèque</a>
     </div>
 </main>
 

@@ -25,11 +25,20 @@ switch($page) {
     case 'detailMusique':
         require_once __DIR__. '/controllers/detailMusiqueController.php';
         break;
+    case 'ajoutMusiqueBiblio':
+        require_once __DIR__.'/controllers/ajoutMusiqueBiblioController.php';
+        break;
+    case 'note':
+        require_once __DIR__.'/controllers/noteMusiqueController.php';
+        break;
+    case 'suppresion_musique':
+        require_once __DIR__.'/controllers/suppresionMusiqueBiblioController.php';
+        break;
     case 'compte':
         require 'views/compte.php';
         break;
     case 'bibliotheque':
-        require 'views/bibliotheque.php';
+        require_once __DIR__.'/controllers/bibliothequeController.php';
         break;
     case 'TraitementDeconnexion':
         require 'controllers/DeconnexionController.php';
