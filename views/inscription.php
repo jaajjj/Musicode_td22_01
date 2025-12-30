@@ -2,7 +2,7 @@
     <main class="form-container">
         <div class="form-box">
             <h2>Inscription</h2>
-            <form method ="POST" action="<?php echo getenv('BASE_URL'); ?>inscription">
+            <form method ="POST" action="<?php echo getenv('BASE_URL'); ?>register">
                 <label for="nom">Nom d’affichage</label>
                 <input type="text" id="nom" name="nom">
 

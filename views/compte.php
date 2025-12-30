@@ -11,7 +11,7 @@
                 <p class="account-error"><?= htmlspecialchars($errorMessage) ?></p>
             <?php endif; ?>
 
-            <form action="<?= getenv('BASE_URL') . 'compte' ?>" method="post">
+            <form action="<?= getenv('BASE_URL') . 'account' ?>" method="post">
                 <label for="display_name">Nom d’affichage</label>
                 <input
                     type="text"

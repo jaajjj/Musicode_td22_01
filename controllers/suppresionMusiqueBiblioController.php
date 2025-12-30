@@ -10,7 +10,7 @@ if (isset($_GET['id_mus']) && isset($_GET['id_user'])){
         $_SESSION['message_error'] = "Erreur lors de la suppression de la musique.";
     }
     
-    header('Location: ' . getenv('BASE_URL') . 'bibliotheque');
+    header('Location: ' . getenv('BASE_URL') . 'library');
     exit();
 }
 

@@ -7,7 +7,7 @@ if(isset($_GET['id_mus'], $_GET['id_user'], $_GET['note'])) {
     $note = $_GET['note'];
     if($note < 0 || $note > 10) {
         $_SESSION['message_error'] = "La note doit être comprise entre 0 et 10.";
-        header('Location: ' . getenv('BASE_URL') . 'bibliotheque');
+        header('Location: ' . getenv('BASE_URL') . 'library');
         exit();
     }
     if(update_note_musique($id_user, $id_mus, $note)) {
@@ -16,10 +16,10 @@ if(isset($_GET['id_mus'], $_GET['id_user'], $_GET['note'])) {
         $_SESSION['message_error'] = "Erreur lors de la mise à jour de la note.";
     }
 
-    header('Location: ' . getenv('BASE_URL') . 'bibliotheque');
+    header('Location: ' . getenv('BASE_URL') . 'library');
     exit();
 } else {
     $_SESSION['message_error'] = "Informations manquantes pour la mise à jour de la note.";
-    header('Location: ' . getenv('BASE_URL') . 'bibliotheque');
+    header('Location: ' . getenv('BASE_URL') . 'library');
     exit();
 }

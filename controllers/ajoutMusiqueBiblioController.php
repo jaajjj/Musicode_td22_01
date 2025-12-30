@@ -11,6 +11,6 @@ if (isset($_GET['id_mus']) && isset($_SESSION['user']['id_user'])){
         $_SESSION['message_error'] = "Erreur lors de l'ajout à la bibliothèque.";
     }
     
-    header('Location: ' . getenv('BASE_URL') . 'bibliotheque');
+    header('Location: ' . getenv('BASE_URL') . 'library');
     exit();
 }

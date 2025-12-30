@@ -10,7 +10,7 @@ $page = $_GET['page'] ?? 'home';
 require_once 'views/templates/header.php';
 
 switch($page) {
-    case 'inscription':
+    case 'register':
          require_once __DIR__.'/controllers/traitement_Inscription.php';
         break;
     case 'login':
@@ -34,10 +34,10 @@ switch($page) {
     case 'suppresion_musique':
         require_once __DIR__.'/controllers/suppresionMusiqueBiblioController.php';
         break;
-    case 'compte':
+    case 'account':
         require_once __DIR__. '/controllers/compteController.php';
         break;
-    case 'bibliotheque':
+    case 'library':
         require_once __DIR__.'/controllers/bibliothequeController.php';
         break;
     case 'nouvelleMusique':

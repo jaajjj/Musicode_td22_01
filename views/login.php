@@ -23,7 +23,7 @@
 
             <p class="login-link">
                 Pas encore de compte ?
-                <a href="<?= getenv('BASE_URL').'inscription' ?>">Créer un compte.</a>
+                <a href="<?= getenv('BASE_URL').'register' ?>">Créer un compte.</a>
             </p>
         </div>
     </main>

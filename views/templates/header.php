@@ -15,10 +15,10 @@
             <a href="<?= $_ENV['BASE_URL'].'home' ?>">Catalogue</a>
             <?php if (empty($_SESSION['isConnected'])): ?>
                 <a href="<?= getenv('BASE_URL').'login' ?>">Connexion</a>
-                <a href="<?= getenv('BASE_URL').'inscription' ?>">Inscription</a>
+                <a href="<?= getenv('BASE_URL').'register' ?>">Inscription</a>
             <?php else: ?>
-                <a href="<?= getenv('BASE_URL').'bibliotheque' ?>">Ma bibliotheque</a>
-                <a href="<?= getenv('BASE_URL').'compte' ?>">Mon compte</a>
+                <a href="<?= getenv('BASE_URL').'library' ?>">Ma bibliotheque</a>
+                <a href="<?= getenv('BASE_URL').'account' ?>">Mon compte</a>
                 <a class="deconexion_btn" href="<?= getenv('BASE_URL').'TraitementDeconnexion' ?>">Déconnexion</a>
             <?php endif; ?>
 
