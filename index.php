@@ -6,7 +6,7 @@ session_start();
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$page = $_GET['page'] ?? 'home';
+$page = $_GET['page'] ?? 'musics';
 require_once 'views/templates/header.php';
 
 switch($page) {
@@ -19,7 +19,7 @@ switch($page) {
      case 'traitementConnexion':
         require_once __DIR__.'/controllers/ConnexionController.php';
         break;
-    case 'home':
+    case 'musics':
         require_once __DIR__. '/controllers/catalogueMusiqueController.php';
         break;
     case 'detailMusique':

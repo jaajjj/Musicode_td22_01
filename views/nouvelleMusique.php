@@ -1,5 +1,5 @@
     <div class="detail-container">
-        <a href="<?= getenv('BASE_URL') . 'home' ?>" class="back-link">
+        <a href="<?= getenv('BASE_URL') . 'musics' ?>" class="back-link">
             ← Retour au catalogue
         </a>
 

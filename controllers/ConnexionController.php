@@ -22,7 +22,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
             'mail_user' => $user['mail_user']
         ];
 
-        header('Location: ' . getenv('BASE_URL') . 'home');
+        header('Location: ' . getenv('BASE_URL') . 'musics');
         exit();
     } else {
         $_SESSION['connexion_error'] = "Email ou mot de passe incorrect.";

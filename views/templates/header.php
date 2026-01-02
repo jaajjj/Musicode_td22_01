@@ -8,11 +8,11 @@
 </head>
 <body>
     <header>
-        <a href="<?= getenv('BASE_URL').'home'?>" class="logo">
+        <a href="<?= getenv('BASE_URL').'musics'?>" class="logo">
             <span class="logo-icon"><img alt='logo-beau' src="<?= getenv('BASE_URL').'assets/img/logo.png' ?>"></span> Musicode
         </a>
         <nav>
-            <a href="<?= $_ENV['BASE_URL'].'home' ?>">Catalogue</a>
+            <a href="<?= $_ENV['BASE_URL'].'musics' ?>">Catalogue</a>
             <?php if (empty($_SESSION['isConnected'])): ?>
                 <a href="<?= getenv('BASE_URL').'login' ?>">Connexion</a>
                 <a href="<?= getenv('BASE_URL').'register' ?>">Inscription</a>
