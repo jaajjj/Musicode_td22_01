@@ -22,7 +22,7 @@
             <?php if (!empty($errors)): ?>
             <ul class="error-messages">
                 <?php foreach ($errors as $err): ?>
-                    <li class="error"><?= $err ?></li>
+                    <li class="error"><?= htmlspecialchars($err) ?></li>
                 <?php endforeach; ?>
             </ul>
             <?php endif; ?>

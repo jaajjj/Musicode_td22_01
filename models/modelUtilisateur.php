@@ -59,3 +59,12 @@ function update_compte_nom_mdp(int $idUser, string $nom, string $hashedPassword)
     $stmt = $pdo->prepare($sql);
     return $stmt->execute([$nom, $hashedPassword, $idUser]);
 }
+
+function emailExiste(string $email): bool {
+    $pdo = get_bdd();
+    $sql = "SELECT COUNT(*) FROM USER WHERE mail_user = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$email]);
+    $count = $stmt->fetchColumn();
+    return $count > 0;
+}

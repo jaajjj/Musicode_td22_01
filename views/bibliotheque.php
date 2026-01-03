@@ -1,10 +1,10 @@
 <?php if (isset($_SESSION['message_success'])): ?>
-    <p class="notif-ajout-biblio"><?= $_SESSION['message_success'] ?></p>
+    <p class="notif-ajout-biblio"><?= htmlspecialchars($_SESSION['message_success']) ?></p>
     <?php unset($_SESSION['message_success']); ?>
 <?php endif; ?>
 
 <?php if (isset($_SESSION['message_error'])): ?>
-    <p class="notif-ajout-biblio error"><?= $_SESSION['message_error'] ?></p>
+    <p class="notif-ajout-biblio error"><?= htmlspecialchars($_SESSION['message_error']) ?></p>
     <?php unset($_SESSION['message_error']); ?>
 <?php endif; ?>
 
@@ -20,7 +20,7 @@
                 <div class="biblio-card-header">
                     <div class="biblio-card-title"><?= htmlspecialchars($musique['titre_mus']) ?></div>
                     <div class="biblio-card-meta"><?= htmlspecialchars($musique['auteur_mus']) ?> · Album : <?= htmlspecialchars($musique['album_mus']) ?></div>
-                    <div class="biblio-card-duration">Durée : <?= get_duree($musique['duree_mus']) ?></div>
+                    <div class="biblio-card-duration">Durée : <?= htmlspecialchars(get_duree($musique['duree_mus'])) ?></div>
                 </div>
             
                 <div class="biblio-card-note-row">

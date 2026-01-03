@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musicode - Catalogue des musiques</title>
-    <link rel="stylesheet" href=<?= getenv('BASE_URL').'assets/css/style.css'?>>
+    <link rel="stylesheet" href=<?= $_ENV['BASE_URL'].'assets/css/style.css'?>>
 </head>
 <body>
     <header>
-        <a href="<?= getenv('BASE_URL').'musics'?>" class="logo">
-            <span class="logo-icon"><img alt='logo-beau' src="<?= getenv('BASE_URL').'assets/img/logo.png' ?>"></span> Musicode
+        <a href="<?= $_ENV['BASE_URL'].'musics'?>" class="logo">
+            <span class="logo-icon"><img alt='logo-beau' src="<?= $_ENV['BASE_URL'].'assets/img/logo.png' ?>"></span> Musicode
         </a>
         <nav>
             <a href="<?= $_ENV['BASE_URL'].'musics' ?>">Catalogue</a>
             <?php if (empty($_SESSION['isConnected'])): ?>
-                <a href="<?= getenv('BASE_URL').'login' ?>">Connexion</a>
-                <a href="<?= getenv('BASE_URL').'register' ?>">Inscription</a>
+                <a href="<?= $_ENV['BASE_URL'].'login' ?>">Connexion</a>
+                <a href="<?= $_ENV['BASE_URL'].'register' ?>">Inscription</a>
             <?php else: ?>
-                <a href="<?= getenv('BASE_URL').'library' ?>">Ma bibliotheque</a>
-                <a href="<?= getenv('BASE_URL').'account' ?>">Mon compte</a>
-                <a class="deconexion_btn" href="<?= getenv('BASE_URL').'TraitementDeconnexion' ?>">Déconnexion</a>
+                <a href="<?= $_ENV['BASE_URL'].'library' ?>">Ma bibliotheque</a>
+                <a href="<?= $_ENV['BASE_URL'].'account' ?>">Mon compte</a>
+                <a class="deconexion_btn" href="<?= $_ENV['BASE_URL'].'TraitementDeconnexion' ?>">Déconnexion</a>
             <?php endif; ?>
 
         </nav>

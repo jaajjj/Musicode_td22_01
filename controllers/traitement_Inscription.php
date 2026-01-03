@@ -7,6 +7,7 @@ function motdepasse_invalide($mdp, $mdp2) {
     if (!preg_match('/[a-z]/', $mdp)) $err[] = "Le mot de passe doit contenir au moins une minuscule";
     if (!preg_match('/[0-9]/', $mdp)) $err[] = "Le mot de passe doit contenir au moins un chiffre";
     if (!preg_match('/[!@#$%^&*(),.?":{}|<>]/', $mdp)) $err[] = "Le mot de passe doit contenir au moins un caractère spécial (!@#$%^&*(),.?\":{}|<>)";
+    if (emailExiste($_POST['email'])) $err[] = "L'adresse e-mail est déjà utilisée";
     if ($mdp !== $mdp2) $err[] = "Les mots de passe sont différents";
     return $err;
 }

@@ -7,6 +7,7 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $page = $_GET['page'] ?? 'musics';
+$idMusique = $_GET['idMusique'] ?? null;
 require_once 'views/templates/header.php';
 
 switch($page) {
@@ -20,9 +21,14 @@ switch($page) {
         require_once __DIR__.'/controllers/ConnexionController.php';
         break;
     case 'musics':
-        require_once __DIR__. '/controllers/catalogueMusiqueController.php';
+        if ($idMusique) {
+            $_GET['id_mus'] = $idMusique;
+            require_once __DIR__ . '/controllers/detailMusiqueController.php';
+        } else {
+            require_once __DIR__ . '/controllers/catalogueMusiqueController.php';
+        }
         break;
-    case 'detailMusique':
+    case 'musics/':
         require_once __DIR__. '/controllers/detailMusiqueController.php';
         break;
     case 'ajoutMusiqueBiblio':
