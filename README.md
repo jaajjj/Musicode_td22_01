@@ -10,7 +10,7 @@ Projet Web PHP Musicode
    composer install
    ```
 
-3. **Créer le fichier .env** : Créez un fichier `.env` à la racine du projet avec la structure suivante (adaptez les valeurs selon votre configuration) :
+3. **Créer le fichier .env** : Modifiez le fichier `.env.exemple` en `.env`  à la racine du projet avec la structure suivante (adaptez les valeurs selon votre configuration) :
    ```
    DB_HOST=localhost
    DB_NAME=musicode_db
