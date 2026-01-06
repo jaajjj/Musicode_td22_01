@@ -7,8 +7,6 @@
     <p class="notif-ajout-biblio error"><?= htmlspecialchars($_SESSION['message_error']) ?></p>
     <?php unset($_SESSION['message_error']); ?>
 <?php endif; ?>
-
-
 <div class="biblio-page">
     <div class="biblio-container">
         <h1 class="biblio-title">Ma bibliothèque</h1>
@@ -22,7 +20,6 @@
                     <div class="biblio-card-meta"><?= htmlspecialchars($musique['auteur_mus']) ?> · Album : <?= htmlspecialchars($musique['album_mus']) ?></div>
                     <div class="biblio-card-duration">Durée : <?= htmlspecialchars(get_duree($musique['duree_mus'])) ?></div>
                 </div>
-            
                 <div class="biblio-card-note-row">
                     <span class="biblio-card-note-label">Note</span>
                     <form method="GET" action="<?= getenv('BASE_URL').'note' ?>"> 
@@ -31,8 +28,7 @@
                         <input type="hidden" name="id_user" value="<?= $_SESSION['user']['id_user'] ?>">
                         <button type="submit" class="biblio-card-btn biblio-card-btn-update">Mettre à jour</button>
                     </form>
-                </div>
-                
+                </div>          
                 <div class="biblio-card-actions-row">
                     <a href="<?= getenv('BASE_URL').'suppresion_musique?id_mus='.$musique['id_mus'].'&id_user='.$_SESSION['user']['id_user'] ?>" class="biblio-card-btn biblio-card-btn-remove">Retirer de ma bibliothèque</a>
                 </div>
@@ -42,7 +38,3 @@
 
     </div>
 </div>
-
-
-
-

@@ -14,12 +14,12 @@ function get_user_by_email(string $email) {
     $stmt->execute([$email]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
 function inscription($username, $password, $email){
     $pdo = get_bdd();
-    $stmt = $pdo->prepare("
-        INSERT INTO USER (nom_user,mail_user,mdp_user )
-        VALUES (?, ?, ?)
-    ");
+    $stmt = $pdo->prepare(
+        "INSERT INTO USER (nom_user,mail_user,mdp_user) VALUES (?, ?, ?)"
+    );
     return $stmt->execute([$username, $email, $password]);
 }
 
@@ -38,9 +38,7 @@ function verify_user(string $email, string $password) {
 
 function get_compte_user(int $idUser) {
     $pdo = get_bdd();
-    $sql = "SELECT id_user, nom_user, mail_user, mdp_user
-            FROM USER
-            WHERE id_user = ?";
+    $sql = "SELECT id_user, nom_user, mail_user, mdp_user FROM USER WHERE id_user = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$idUser]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -68,3 +66,4 @@ function emailExiste(string $email): bool {
     $count = $stmt->fetchColumn();
     return $count > 0;
 }
+?>

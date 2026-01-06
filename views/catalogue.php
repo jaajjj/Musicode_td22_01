@@ -1,8 +1,5 @@
-
 <div class="container">
         <main>
-
-
             <section class="catalogue-header">
                 <div>
                     <h1>Catalogue des musiques</h1>
@@ -15,15 +12,12 @@
                         <span style="font-size: 2em;">+</span> Nouvelle musique
                     </a>
                 <?php endif; ?>
-                
-                
-               
-            </section>
 
+            </section>
             <div class="music-grid">
                 <?php foreach ($catalogue as $musique): ?>
                     <article class="music-card">
-                                         <h3><?= htmlspecialchars($musique["titre_mus"])?></h3>
+                        <h3><?= htmlspecialchars($musique["titre_mus"])?></h3>
                         <p><?= htmlspecialchars($musique["auteur_mus"])?> - Album : <?= htmlspecialchars($musique["album_mus"])?></p>
                         <span class="duration">Durée : <?= htmlspecialchars(get_duree($musique["duree_mus"]))?></span>
                         <div class="card-actions">

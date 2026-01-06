@@ -1,4 +1,3 @@
-
 <div class="form-container">
     <main>
         <div class="form-box">
@@ -11,7 +10,6 @@
                 <?php unset($_SESSION['connexion_error']); ?>
             <?php endif; ?>
 
-
             <form action="<?= getenv('BASE_URL').'traitementConnexion' ?>" method="post">
                 <label for="email">Adresse e-mail</label>
                 <input type="email" id="email" name="email" required>
@@ -23,10 +21,8 @@
 
             <p class="login-link">
                 Pas encore de compte ?
-                <a href="<?= getenv('BASE_URL').'register' ?>">Créer un compte.</a>
+                <a href="<?= getenv('BASE_URL').'register' ?>">Créer un compte</a>
             </p>
         </div>
     </main>
 </div>
-
-<?php include_once "templates/footer.php" ?>

@@ -31,6 +31,6 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     }
 } else {
     $_SESSION['connexion_error'] = "Veuillez remplir tous les champs";
-    header('Location: '.getenv('BASE_URL') . 'login');
+    header('Location: '.getenv('BASE_URL').'login');
     exit();
 }

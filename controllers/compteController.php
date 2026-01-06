@@ -1,37 +1,37 @@
 <?php
 require_once __DIR__ .'/../models/modelUtilisateur.php';
 
-$idUser = (int)$_SESSION['user']['id_user'];
-$user = get_compte_user($idUser);
+$id_user = (int)$_SESSION['user']['id_user'];
+$user = get_compte_user($id_user);
 
-$displayName = $user['nom_user'];
-$successMessage = '';
-$errorMessage = '';
+$affich_nom = $user['nom_user'];
+$succes_mess = '';
+$error_mess = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $displayName = $_POST['display_name'] ?? '';
-    $newPassword = $_POST['new_password'] ?? '';
+    $affich_nom = $_POST['display_name'] ?? '';
+    $nouv_mdp = $_POST['new_password'] ?? '';
     $confirm = $_POST['confirm_password'] ?? '';
 
-    if ($displayName === '') {
-        $errorMessage = "Le nom d'affichage est obligatoire.";
-    } elseif (($newPassword !== '' || $confirm !== '') && $newPassword !== $confirm) {
-        $errorMessage = "Les mots de passe ne correspondent pas.";
-    } elseif ($newPassword !== '' && strlen($newPassword) < 6) {
-        $errorMessage = "Le mot de passe doit contenir au moins 6 caractères.";
+    if ($affich_nom === '') {
+        $error_mess = "Le nom d'affichage est obligatoire.";
+    } elseif (($nouv_mdp !== '' || $confirm !== '') && $nouv_mdp !== $confirm) {
+        $error_mess = "Les mots de passe ne correspondent pas.";
+    } elseif ($nouv_mdp !== '' && strlen($nouv_mdp) < 6) {
+        $error_mess = "Le mot de passe doit contenir au moins 6 caractères.";
     } else {
-        if ($newPassword === '' && $confirm === '') {
-            $ok = update_compte_nom($idUser, $displayName);
+        if ($nouv_mdp === '' && $confirm === '') {
+            $ok = update_compte_nom($id_user, $affich_nom);
         } else {
-            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-            $ok = update_compte_nom_mdp($idUser, $displayName, $hashedPassword);
+            $hashedPassword = password_hash($nouv_mdp, PASSWORD_DEFAULT);
+            $ok = update_compte_nom_mdp($id_user, $affich_nom, $hashedPassword);
         }
 
         if ($ok) {
-            $_SESSION['user']['nomUser'] = $displayName;
-            $successMessage = "Votre compte a bien été mis à jour :)";
+            $_SESSION['user']['nomUser'] = $affich_nom;
+            $succes_mess = "Votre compte a bien été mis à jour :)";
         } else {
-            $errorMessage = "Une erreur est survenue lors de la mise à jour, ressayez :(";
+            $error_mess = "Une erreur est survenue lors de la mise à jour, ressayez :(";
         }
     }
 }

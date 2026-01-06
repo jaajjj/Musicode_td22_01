@@ -7,3 +7,4 @@ function get_biblio(){
     $biblio = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $biblio;
 }
+?>

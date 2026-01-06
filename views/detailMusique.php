@@ -1,7 +1,3 @@
-<?php 
-require_once "controllers/detailMusiqueController.php";
-?>
-
 <main class="detail-container">
     <a href="<?= $_ENV['BASE_URL'] . 'musics' ?>" class="back-link">← Retour au catalogue</a>
 
@@ -11,10 +7,11 @@ require_once "controllers/detailMusiqueController.php";
         <p class="album">Album : <?= htmlspecialchars($musique['album_mus']) ?></p>
         <p class="duration">Durée : <?= htmlspecialchars(get_duree($musique['duree_mus'])) ?></p>
         <?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected']):?> 
-            <a href="<?= getenv('BASE_URL').'ajoutMusiqueBiblio?id_mus='.$musique['id_mus'].'&id_user='.$_SESSION['user']['id_user'];?>" class="btn">Ajouter à ma bibliothèque</a>
+            <a href="<?= getenv('BASE_URL').'ajoutMusiqueBiblio?id_mus='.$musique['id_mus'].'&id_user='.$_SESSION['user']['id_user'];?>" class="btn">
+                Ajouter à ma bibliothèque
+            </a>
         <?php else:?>
             <a href="<?= getenv('BASE_URL').'login'?>" class="connection-link">Connectez vous pour l'ajouter</a>
-        <?php endif; ?>    </div>
+        <?php endif; ?>    
+    </div>
 </main>
-
-<?php include_once "templates/footer.php"; ?>
