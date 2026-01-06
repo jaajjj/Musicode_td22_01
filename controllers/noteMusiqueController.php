@@ -5,8 +5,8 @@ if(isset($_GET['id_mus'], $_GET['id_user'], $_GET['note'])) {
     $id_user = $_GET['id_user'];
     $id_mus = $_GET['id_mus'];
     $note = $_GET['note'];
-    if($note < 0 || $note > 10) {
-        $_SESSION['message_error'] = "La note doit être comprise entre 0 et 10.";
+    if($note < 0 || $note > 5) {
+        $_SESSION['message_error'] = "La note doit être comprise entre 0 et 5.";
         header('Location: ' . getenv('BASE_URL') . 'library');
         exit();
     }

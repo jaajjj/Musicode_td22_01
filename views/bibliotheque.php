@@ -26,7 +26,7 @@
                 <div class="biblio-card-note-row">
                     <span class="biblio-card-note-label">Note</span>
                     <form method="GET" action="<?= getenv('BASE_URL').'note' ?>"> 
-                        <input class="biblio-card-note-input" type="number" min="0" max="10" name="note" value="<?= htmlspecialchars($musique['note_mus']) ?>">
+                        <input class="biblio-card-note-input" type="number" min="0" max="5" name="note" value="<?= htmlspecialchars($musique['note_mus']) ?>">
                         <input type="hidden" name="id_mus" value="<?= $musique['id_mus'] ?>">
                         <input type="hidden" name="id_user" value="<?= $_SESSION['user']['id_user'] ?>">
                         <button type="submit" class="biblio-card-btn biblio-card-btn-update">Mettre à jour</button>
