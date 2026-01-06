@@ -1,20 +1,20 @@
 <?php
-require_once __DIR__ . '/../models/modelUtilisateur.php';
+require_once __DIR__ .'/../models/modelUtilisateur.php';
 
-$idUser = (int) $_SESSION['user']['id_user'];
-$user   = get_compte_user($idUser);
+$idUser = (int)$_SESSION['user']['id_user'];
+$user = get_compte_user($idUser);
 
-$displayName    = $user['nom_user'];
+$displayName = $user['nom_user'];
 $successMessage = '';
-$errorMessage   = '';
+$errorMessage = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $displayName = $_POST['display_name'] ?? '';
     $newPassword = $_POST['new_password'] ?? '';
-    $confirm     = $_POST['confirm_password'] ?? '';
+    $confirm = $_POST['confirm_password'] ?? '';
 
     if ($displayName === '') {
-        $errorMessage = "Le nom d’affichage est obligatoire.";
+        $errorMessage = "Le nom d'affichage est obligatoire.";
     } elseif (($newPassword !== '' || $confirm !== '') && $newPassword !== $confirm) {
         $errorMessage = "Les mots de passe ne correspondent pas.";
     } elseif ($newPassword !== '' && strlen($newPassword) < 6) {
@@ -36,4 +36,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require __DIR__ . '/../views/compte.php';
+require __DIR__ .'/../views/compte.php';

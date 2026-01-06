@@ -1,8 +1,8 @@
 <?php 
-require_once __DIR__ . '/../models/modelUtilisateur.php';
+require_once __DIR__ .'/../models/modelUtilisateur.php';
 
 function motdepasse_invalide($mdp, $mdp2) {
-    $err = [];
+    $err = []; //tab d'erreurs
     if (strlen($mdp) < 8) $err[] = "Le mot de passe doit contenir au moins 8 caractères";
     if (!preg_match('/[a-z]/', $mdp)) $err[] = "Le mot de passe doit contenir au moins une minuscule";
     if (!preg_match('/[0-9]/', $mdp)) $err[] = "Le mot de passe doit contenir au moins un chiffre";
@@ -25,10 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
        $inscription_success = inscription($nom, password_hash($password, PASSWORD_BCRYPT), $email);
         if ($inscription_success) {
-            header('Location: ' . getenv('BASE_URL') . 'login');
+            header('Location: ' . getenv('BASE_URL') .'login');
             exit();
         } else {
-            $errors[] = "Erreur lors de l'inscription. Veuillez réessayer.";
+            $errors[] = "Erreur lors de l'inscription. Veuillez réessayer";
         }
     }
 }
